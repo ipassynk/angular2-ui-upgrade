@@ -1,11 +1,14 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// import polyfills
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+// import angular2 dpes
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-if (environment.production) {
-  enableProdMode();
-}
+import {Ng1AppModule} from './app/ng1_app';
+import {AppModule} from './app/app.module';
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
+  const upgrade = (<any>ref.instance).upgrade;
+  upgrade.bootstrap(document.body, [Ng1AppModule.name]);
+});

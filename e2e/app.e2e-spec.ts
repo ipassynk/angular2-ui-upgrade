@@ -1,10 +1,10 @@
-import { Angular2UiGridPage } from './app.po';
+import { Angular2UiUpgradePage } from './app.po';
 
-describe('angular2-ui-grid App', () => {
-  let page: Angular2UiGridPage;
+describe('angular2-ui-upgrade App', () => {
+  let page: Angular2UiUpgradePage;
 
   beforeEach(() => {
-    page = new Angular2UiGridPage();
+    page = new Angular2UiUpgradePage();
   });
 
   it('should display message saying app works', () => {

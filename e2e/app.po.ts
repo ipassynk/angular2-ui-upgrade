@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class Angular2UiGridPage {
+export class Angular2UiUpgradePage {
   navigateTo() {
     return browser.get('/');
   }
